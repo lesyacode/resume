@@ -149,6 +149,11 @@ a.secondary {
   border-bottom: none;
 }
 
+.headerContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .name {
   color: white;
   font-size: 3rem;
@@ -161,6 +166,19 @@ a.secondary {
   color: rgba(255, 255, 255, 0.9);
   margin-top: 0.75rem;
   font-size: 1.4rem;
+}
+
+.contactInfo {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .list {
@@ -178,6 +196,68 @@ a.secondary {
 .listItem strong {
   color: #4f46e5;
   font-size: 1.1rem;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.skillItem {
+  background: rgba(99, 102, 241, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.skillName {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.skillBar {
+  height: 8px;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skillProgress {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #4f46e5);
+  border-radius: 4px;
+  transition: width 1s ease-in-out;
+}
+
+.experienceItem {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background: rgba(99, 102, 241, 0.02);
+  border-radius: 8px;
+  border-left: 4px solid #6366f1;
+}
+
+.experienceTitle {
+  color: #4f46e5;
+  margin: 0 0 0.5rem 0;
+}
+
+.experienceCompany {
+  font-weight: 500;
+  margin: 0 0 0.25rem 0;
+}
+
+.experiencePeriod {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.aboutText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #374151;
 }
 
 /* Enable hover only on non-touch devices */

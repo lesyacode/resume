@@ -1,136 +1,99 @@
 import styles from "./page.module.css";
 
+const ResumeData = {
+  header: {
+    name: "Olesia",
+    title: "Frontend Developer & Creative Designer",
+    contact: {
+      email: "your.email@example.com",
+      phone: "+46 XX XXX XX XX",
+      location: "Göteborg, Sweden",
+      linkedin: "linkedin.com/in/yourprofile"
+    }
+  },
+  sections: {
+    about: "Kreativ utvecklare med bakgrund inom design och kundservice. Kombinerar teknisk kompetens med konstnärlig vision för att skapa engagerande digitala upplevelser.",
+    skills: [
+      { name: "Frontend Development", level: 90 },
+      { name: "UI/UX Design", level: 85 },
+      { name: "Kreativitet", level: 95 },
+      { name: "Problemlösning", level: 88 },
+      { name: "Kommunikation", level: 90 },
+      { name: "Projektledning", level: 82 }
+    ],
+    experience: [
+      {
+        title: "Manager inom reklam",
+        company: "Reklambyrå AB",
+        period: "2020 - 2022",
+        description: "Ledde kreativa projekt och kampanjer"
+      },
+      {
+        title: "Säljare & Butiksmedarbetare",
+        company: "Retail AB",
+        period: "2018 - 2020",
+        description: "Kundservice och försäljning"
+      },
+      {
+        title: "Barista",
+        company: "Café Stockholm",
+        period: "2017 - 2018",
+        description: "Kundservice och kaffekonst"
+      }
+    ]
+  }
+};
+
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        {/* Header */}
         <header className={styles.header}>
-          <h1 className={styles.name}>Olesia</h1>
-          <p className={styles.subtitle}>Frontend Developer & Creative Designer</p>
+          <div className={styles.headerContent}>
+            <h1 className={styles.name}>{ResumeData.header.name}</h1>
+            <p className={styles.subtitle}>{ResumeData.header.title}</p>
+            <div className={styles.contactInfo}>
+              {Object.entries(ResumeData.header.contact).map(([key, value]) => (
+                <span key={key} className={styles.contactItem}>
+                  {value}
+                </span>
+              ))}
+            </div>
+          </div>
         </header>
 
-        {/* About */}
-        <section className={styles.section} style={{ background: 'linear-gradient(to right, #ffffff, #f8faff)' }}>
+        <section className={`${styles.section} ${styles.aboutSection}`}>
           <h2 className={styles.sectionTitle}>Om mig</h2>
-          <p className={styles.listItem}>
-            Bor i Göteborg och tycker om att måla. Jag är kreativ, bra på att
-            analysera och älskar att lära mig nya saker.
-          </p>
+          <p className={styles.aboutText}>{ResumeData.sections.about}</p>
         </section>
 
-        {/* Skills - Move this section up for more impact */}
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Färdigheter</h2>
-          <ul className={styles.list} style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-            gap: '1rem'
-          }}>
-            <li className={styles.listItem} style={{ 
-              background: 'rgba(99, 102, 241, 0.05)', 
-              padding: '0.75rem',
-              borderRadius: '6px',
-              textAlign: 'center'
-            }}>
-              Kreativitet
-            </li>
-            <li className={styles.listItem} style={{ 
-              background: 'rgba(99, 102, 241, 0.05)', 
-              padding: '0.75rem',
-              borderRadius: '6px',
-              textAlign: 'center'
-            }}>
-              Analysförmåga
-            </li>
-            <li className={styles.listItem} style={{ 
-              background: 'rgba(99, 102, 241, 0.05)', 
-              padding: '0.75rem',
-              borderRadius: '6px',
-              textAlign: 'center'
-            }}>
-              Programmering
-            </li>
-            <li className={styles.listItem} style={{ 
-              background: 'rgba(99, 102, 241, 0.05)', 
-              padding: '0.75rem',
-              borderRadius: '6px',
-              textAlign: 'center'
-            }}>
-              Musik
-            </li>
-            <li className={styles.listItem} style={{ 
-              background: 'rgba(99, 102, 241, 0.05)', 
-              padding: '0.75rem',
-              borderRadius: '6px',
-              textAlign: 'center'
-            }}>
-              Problemlösning
-            </li>
-            <li className={styles.listItem} style={{ 
-              background: 'rgba(99, 102, 241, 0.05)', 
-              padding: '0.75rem',
-              borderRadius: '6px',
-              textAlign: 'center'
-            }}>
-              Kommunikation
-            </li>
-          </ul>
+        <section className={`${styles.section} ${styles.skillsSection}`}>
+          <h2 className={styles.sectionTitle}>Kompetenser</h2>
+          <div className={styles.skillsGrid}>
+            {ResumeData.sections.skills.map((skill) => (
+              <div key={skill.name} className={styles.skillItem}>
+                <span className={styles.skillName}>{skill.name}</span>
+                <div className={styles.skillBar}>
+                  <div 
+                    className={styles.skillProgress} 
+                    style={{ width: `${skill.level}%` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
 
-        {/* Experience */}
-        <section className={styles.section}>
+        <section className={`${styles.section} ${styles.experienceSection}`}>
           <h2 className={styles.sectionTitle}>Erfarenhet</h2>
-          <ul className={styles.list}>
-            <li className={styles.listItem}>
-              <strong>Säljare & Butiksmedarbetare</strong>
-              <br />
-              <span>Olika butiker</span>
-            </li>
-            <li className={styles.listItem}>
-              <strong>Manager inom reklam</strong>
-              <br />
-              <span>Reklambranschen</span>
-            </li>
-            <li className={styles.listItem}>
-              <strong>Barista</strong>
-              <br />
-              <span>Café</span>
-            </li>
-          </ul>
-        </section>
-
-        {/* Education */}
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Utbildning</h2>
-          <ul className={styles.list}>
-            <li className={styles.listItem}>
-              <strong>Universitetsstudier</strong>
-              <br />
-              <span>Studerat på universitet</span>
-            </li>
-          </ul>
-        </section>
-
-        {/* Languages */}
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Språk</h2>
-          <ul className={styles.list}>
-            <li className={styles.listItem}>Ryska (modersmål)</li>
-            <li className={styles.listItem}>Svenska (B1)</li>
-            <li className={styles.listItem}>Engelska</li>
-            <li className={styles.listItem}>Kan programmera</li>
-          </ul>
-        </section>
-
-        {/* Interests */}
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Intressen</h2>
-          <ul className={styles.list}>
-            <li className={styles.listItem}>Måla</li>
-            <li className={styles.listItem}>Spela musik</li>
-            <li className={styles.listItem}>Kreativa projekt</li>
-          </ul>
+          {ResumeData.sections.experience.map((exp, index) => (
+            <div key={index} className={styles.experienceItem}>
+              <h3 className={styles.experienceTitle}>{exp.title}</h3>
+              <p className={styles.experienceCompany}>{exp.company}</p>
+              <p className={styles.experiencePeriod}>{exp.period}</p>
+              <p className={styles.experienceDescription}>{exp.description}</p>
+            </div>
+          ))}
         </section>
       </main>
     </div>
