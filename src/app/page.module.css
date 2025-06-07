@@ -14,6 +14,7 @@
   padding: 80px;
   gap: 64px;
   font-family: var(--font-geist-sans);
+  background: linear-gradient(135deg, #f6f8ff 0%, #f0f4ff 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,6 +33,13 @@
   flex-direction: column;
   gap: 32px;
   grid-row-start: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 3rem;
 }
 
 .main ol {
@@ -106,6 +114,70 @@ a.secondary {
 
 .footer img {
   flex-shrink: 0;
+}
+
+.section {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eaeaea;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
+.sectionTitle {
+  color: #4f46e5;
+  font-size: 1.6rem;
+  border-left: 4px solid #6366f1;
+  padding-left: 1rem;
+  margin-left: -1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.header {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  margin: -3rem -3rem 2rem -3rem;
+  padding: 3rem;
+  border-radius: 12px 12px 0 0;
+  border-bottom: none;
+}
+
+.name {
+  color: white;
+  font-size: 3rem;
+  margin: 0;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0.75rem;
+  font-size: 1.4rem;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  gap: 0.5rem;
+}
+
+.listItem {
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+  padding: 0.5rem 0;
+}
+
+.listItem strong {
+  color: #4f46e5;
+  font-size: 1.1rem;
 }
 
 /* Enable hover only on non-touch devices */

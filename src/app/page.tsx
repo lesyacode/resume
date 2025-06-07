@@ -1,95 +1,138 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        {/* Header */}
+        <header className={styles.header}>
+          <h1 className={styles.name}>Olesia</h1>
+          <p className={styles.subtitle}>Frontend Developer & Creative Designer</p>
+        </header>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+        {/* About */}
+        <section className={styles.section} style={{ background: 'linear-gradient(to right, #ffffff, #f8faff)' }}>
+          <h2 className={styles.sectionTitle}>Om mig</h2>
+          <p className={styles.listItem}>
+            Bor i Göteborg och tycker om att måla. Jag är kreativ, bra på att
+            analysera och älskar att lära mig nya saker.
+          </p>
+        </section>
+
+        {/* Skills - Move this section up for more impact */}
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Färdigheter</h2>
+          <ul className={styles.list} style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+            gap: '1rem'
+          }}>
+            <li className={styles.listItem} style={{ 
+              background: 'rgba(99, 102, 241, 0.05)', 
+              padding: '0.75rem',
+              borderRadius: '6px',
+              textAlign: 'center'
+            }}>
+              Kreativitet
+            </li>
+            <li className={styles.listItem} style={{ 
+              background: 'rgba(99, 102, 241, 0.05)', 
+              padding: '0.75rem',
+              borderRadius: '6px',
+              textAlign: 'center'
+            }}>
+              Analysförmåga
+            </li>
+            <li className={styles.listItem} style={{ 
+              background: 'rgba(99, 102, 241, 0.05)', 
+              padding: '0.75rem',
+              borderRadius: '6px',
+              textAlign: 'center'
+            }}>
+              Programmering
+            </li>
+            <li className={styles.listItem} style={{ 
+              background: 'rgba(99, 102, 241, 0.05)', 
+              padding: '0.75rem',
+              borderRadius: '6px',
+              textAlign: 'center'
+            }}>
+              Musik
+            </li>
+            <li className={styles.listItem} style={{ 
+              background: 'rgba(99, 102, 241, 0.05)', 
+              padding: '0.75rem',
+              borderRadius: '6px',
+              textAlign: 'center'
+            }}>
+              Problemlösning
+            </li>
+            <li className={styles.listItem} style={{ 
+              background: 'rgba(99, 102, 241, 0.05)', 
+              padding: '0.75rem',
+              borderRadius: '6px',
+              textAlign: 'center'
+            }}>
+              Kommunikation
+            </li>
+          </ul>
+        </section>
+
+        {/* Experience */}
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Erfarenhet</h2>
+          <ul className={styles.list}>
+            <li className={styles.listItem}>
+              <strong>Säljare & Butiksmedarbetare</strong>
+              <br />
+              <span>Olika butiker</span>
+            </li>
+            <li className={styles.listItem}>
+              <strong>Manager inom reklam</strong>
+              <br />
+              <span>Reklambranschen</span>
+            </li>
+            <li className={styles.listItem}>
+              <strong>Barista</strong>
+              <br />
+              <span>Café</span>
+            </li>
+          </ul>
+        </section>
+
+        {/* Education */}
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Utbildning</h2>
+          <ul className={styles.list}>
+            <li className={styles.listItem}>
+              <strong>Universitetsstudier</strong>
+              <br />
+              <span>Studerat på universitet</span>
+            </li>
+          </ul>
+        </section>
+
+        {/* Languages */}
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Språk</h2>
+          <ul className={styles.list}>
+            <li className={styles.listItem}>Ryska (modersmål)</li>
+            <li className={styles.listItem}>Svenska (B1)</li>
+            <li className={styles.listItem}>Engelska</li>
+            <li className={styles.listItem}>Kan programmera</li>
+          </ul>
+        </section>
+
+        {/* Interests */}
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Intressen</h2>
+          <ul className={styles.list}>
+            <li className={styles.listItem}>Måla</li>
+            <li className={styles.listItem}>Spela musik</li>
+            <li className={styles.listItem}>Kreativa projekt</li>
+          </ul>
+        </section>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
